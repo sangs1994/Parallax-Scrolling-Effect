@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+	<title>Moon Light Parallax</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<section>
+		<img src="bg.jpg" id="bg">
+		<img src="moon.png" id="moon">
+		<img src="mountain.png" id="mountain">
+		<img src="road.png" id="road">
+		<h2 id="text">Moon Light</h2>
+	</section>
+	<p id="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+	<script type="text/javascript">
+		let bg=document.getElementById("bg");
+		let moon=document.getElementById("moon");
+		let mountain=document.getElementById("mountain");
+		let road=document.getElementById("road");
+		let text=document.getElementById("text");
+		let content=document.getElementById("content");
+		
+		window.addEventListener('scroll',function(){
+			var value=window.scrollY;
+			bg.style.top=value * 0.5+'px';
+			moon.style.left=-value * 0.5+'px';
+			mountain.style.top=-value * 0.15+'px';
+			road.style.top=value * 0.15+'px';
+			text.style.top=value * 1+'px';
+			//content.style.top='400px';
+		})
+	</script>
+</body>
+</html>
